@@ -1,65 +1,69 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styled from 'styled-components';
 
-export default function Home() {
+import Layout from 'components/Layout/Layout';
+import Card from 'components/Card/Card';
+import { CardsWrapper } from 'components/Card/Card';
+
+const Wrapper = styled.div`
+  padding: 5rem;
+`;
+
+const Title = styled.h1`
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+
+  span {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #696969;
+    margin-top: 1rem;
+  }
+`;
+
+function Home() {
+  const cards = [
+    {
+      bgUrl: '/images/bubble-map.png',
+      title: 'WHO Covid-19 World Dashboard',
+      chartType: 'Bubble Map',
+      link: '/covid19-dashboard',
+    },
+    {
+      bgUrl: '/images/line-chart.png',
+      title: 'Korea Crop Production',
+      chartType: 'Line Chart',
+      link: '/korea-crop-production',
+    },
+    {
+      bgUrl: '/images/bar-chart.png',
+      title: 'Top 20 Countries by Population 2020',
+      chartType: 'Bar Chart',
+      link: '/most-populated-countries',
+    },
+  ];
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+    <Layout headTitle="Data Visualization">
+      <Wrapper>
+        <Title>
+          📊 &nbsp; Data Visualization<span>with D3.js and React</span>
+        </Title>
+        <CardsWrapper>
+          {cards.map((card, i) => (
+            <Card
+              bgUrl={card.bgUrl}
+              title={card.title}
+              chartType={card.chartType}
+              link={card.link}
+              key={i}
+            />
+          ))}
+        </CardsWrapper>
+      </Wrapper>
+    </Layout>
+  );
 }
+
+export default Home;
