@@ -1,34 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Data Visualization with D3.js and React
 
-## Getting Started
+> Data visualization is an interdisciplinary field that deals with the graphic representation of data. It is a particularly efficient way of communicating when the data is numerous as for example a Time Series.
 
-First, run the development server:
+<br/>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Live Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You can check demo [here]().
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+<br/>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Preview
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<img width="1440" alt="Screen Shot 2021-01-12 at 8 07 54 PM" src="https://user-images.githubusercontent.com/55128990/104317972-1422b500-5522-11eb-8332-c1143d2b4003.png">
 
-## Learn More
+<br/>
 
-To learn more about Next.js, take a look at the following resources:
+### 1. Bubble Map
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![Kapture 2021-01-11 at 20 10 59](https://user-images.githubusercontent.com/55128990/104173607-6643d780-5449-11eb-91b4-51f53c32b22f.gif)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<br/>
 
-## Deploy on Vercel
+### 2. Multi Line Chart
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![Kapture 2021-01-11 at 20 16 26](https://user-images.githubusercontent.com/55128990/104175137-0bf74680-544a-11eb-85a0-337184de9d5c.gif)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<br/>
+
+### 3. Bar Chart
+
+![Kapture 2021-01-12 at 19 31 10](https://user-images.githubusercontent.com/55128990/104303017-dff0c980-550c-11eb-8196-bd05f0fa2d16.gif)
+
+<br/>
+
+### 🛠 Tech and libraries
+
+- Next.js
+- D3.js
+- styled-components
+- Topojson
+- PropTypes
+
+<br/>
+
+### Getting started
+
+Install npm packages
+<br/>
+
+`npm install`
+
+Run dev server
+<br/>
+
+`npm run dev`
+
+<br/>
