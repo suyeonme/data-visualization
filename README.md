@@ -34,6 +34,15 @@ You can check demo [here](https://data-visualization-3ejqnur28.vercel.app/).
 
 <br/>
 
+### ✨ Features
+
+- Interactive graph based on user selected option.
+- Animated graph
+- Sort graph ascending or descending.
+- Zoomable World Map.
+
+<br/>
+
 ### 🛠 Tech and libraries
 
 - Next.js
