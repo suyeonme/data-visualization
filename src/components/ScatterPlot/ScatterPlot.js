@@ -1,24 +1,33 @@
 import React, { useCallback, useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { scaleLinear, extent, select } from 'd3';
+import {
+  scaleLinear,
+  extent,
+  select,
+  scaleOrdinal,
+  schemeCategory10,
+  group,
+} from 'd3';
 import PropsTypes from 'prop-types';
 
-import { Group, drawDash, MapWrapper, Map } from 'style/style';
-import { width, height } from 'utility/utility';
+import { Group, MapWrapper, Map } from 'style/style';
+import { height, width } from 'utility/utility';
 import AxisLabel from 'components/AxisLabel/AxisLabel';
 import Axes from 'components/Axes/Axes';
+import ColorLegend from 'components/ColorLegend/ColorLegend';
 
 function ScatterPlot({ data }) {
   const [selected, setSelected] = useState();
   const circleRef = useRef();
 
-  const margin = { top: 50, right: 100, bottom: 70, left: 50 };
+  const margin = { top: 50, right: 100, bottom: 70, left: 100 };
   const innerWidth = width - margin.right - margin.left;
   const innerHeight = height - margin.top - margin.bottom;
   const circleRadius = 10;
 
   const xValue = d => d.youthRate;
   const yValue = d => d.elderlyRate;
+  const colorValue = d => d.continent;
 
   const xScale = scaleLinear()
     .domain(extent(data, xValue))
@@ -29,6 +38,15 @@ function ScatterPlot({ data }) {
     .domain(extent(data, yValue))
     .range([innerHeight, 0])
     .nice();
+
+  const colorScale = scaleOrdinal(schemeCategory10);
+
+  const nested = Array.from(group(data, colorValue), ([key, value]) => ({
+    key,
+    value,
+  }));
+
+  colorScale.domain(nested.map(d => d.key));
 
   const axesTickFormat = useCallback(number => {
     return number + '%';
@@ -51,9 +69,8 @@ function ScatterPlot({ data }) {
       .delay((_, i) => i * 10)
       .attr('cy', d => yScale(yValue(d)))
       .attr('cx', d => xScale(xValue(d)))
-      .attr('r', circleRadius);
-    // .append('title')
-    // .text(d.country);
+      .attr('r', circleRadius)
+      .style('fill', d => colorScale(colorValue(d)));
   }, []);
 
   return (
@@ -85,6 +102,15 @@ function ScatterPlot({ data }) {
             />
             <g ref={circleRef} />
           </Group>
+          <ColorLegend
+            moveX={270}
+            spacing={30}
+            radius={9}
+            textX={15}
+            colorScale={colorScale}
+            width={width}
+            align="vertical"
+          />
         </svg>
       </Map>
     </MapWrapper>

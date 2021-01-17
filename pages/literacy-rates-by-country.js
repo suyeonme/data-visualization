@@ -20,7 +20,7 @@ function LiteracyRatesByContry({ data }) {
 
 export async function getStaticProps() {
   const data = await csv(
-    'https://gist.githubusercontent.com/suyeonme/4d3c8ca10e33ca59a89d43b6cb8bf687/raw/a3f75212b3cbef72a14c9b4beb268d96d0922aa8/gistfile1.txt'
+    'https://gist.githubusercontent.com/suyeonme/4d3c8ca10e33ca59a89d43b6cb8bf687/raw/c99b981242c76cbf1643409c4b760d889eea7e62/literacy-rates-of-the-the-younger-population-15-24-years-versus-literacy-rates-of-the-older-population-65.csv'
   );
 
   data.forEach(d => {

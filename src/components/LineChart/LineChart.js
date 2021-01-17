@@ -15,7 +15,8 @@ import PropsTypes from 'prop-types';
 
 import Axes from 'components/Axes/Axes';
 import AxisLabel from 'components/AxisLabel/AxisLabel';
-import ColorLegend from 'components/LineChart/ColorLegend';
+// import ColorLegend from 'components/LineChart/ColorLegend';
+import ColorLegend from 'components/ColorLegend/ColorLegend';
 import Indicator from 'components/LineChart/Indicator';
 import Tooltip from 'components/LineChart/Tooltip';
 import { Group, drawDash, MapWrapper, Map } from 'style/style';
@@ -161,6 +162,7 @@ function LineChart({ data }) {
             textX={15}
             colorScale={colorScale}
             width={width}
+            align="row"
           />
           <Indicator
             innerHeight={innerHeight}

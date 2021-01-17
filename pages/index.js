@@ -43,7 +43,7 @@ function Home() {
       link: '/most-populated-countries',
     },
     {
-      bgUrl: '/images/bar-chart.png',
+      bgUrl: '/images/scatter-plot.png',
       title: 'Literacy Rates by Country',
       chartType: 'Scatter Plot',
       link: '/literacy-rates-by-country',
