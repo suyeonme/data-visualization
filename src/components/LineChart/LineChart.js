@@ -14,7 +14,7 @@ import {
 import PropsTypes from 'prop-types';
 
 import Axes from 'components/Axes/Axes';
-import AxesLabel from 'components/LineChart/AxesLabel';
+import AxisLabel from 'components/AxisLabel/AxisLabel';
 import ColorLegend from 'components/LineChart/ColorLegend';
 import Indicator from 'components/LineChart/Indicator';
 import Tooltip from 'components/LineChart/Tooltip';
@@ -121,7 +121,7 @@ function LineChart({ data }) {
               yTickSize={-innerWidth}
               yAxisTickFormat={yAxisTickFormat}
             />
-            <AxesLabel
+            <AxisLabel
               innerHeight={innerHeight}
               innerWidth={innerWidth}
               axisPadding={60}

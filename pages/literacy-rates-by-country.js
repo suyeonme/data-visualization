@@ -8,8 +8,8 @@ function LiteracyRatesByContry({ data }) {
   return (
     <Layout
       headTitle="Scatter Plot | Data Visualization"
-      title="Literacy Rates By Country"
-      subTitle="The younger vs The older generation, 2015"
+      title="Literacy Rates By Country 2015"
+      subTitle="The younger vs The older generation"
       chartType="Scatter Plot"
       dataSource="Our World in Data"
       dataSourceUrl="https://ourworldindata.org/literacy">

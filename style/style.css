@@ -3,3 +3,8 @@
   fill: #d31922;
   pointer-events: none;
 }
+
+.scatter-circle {
+  opacity: 0.5;
+  fill: #408941;
+}

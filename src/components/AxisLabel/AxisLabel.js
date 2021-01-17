@@ -11,7 +11,7 @@ const XAxis = styled.text`
   font-size: 2rem;
 `;
 
-function AxesLabel({
+function AxisLabel({
   innerHeight,
   innerWidth,
   axisPadding,
@@ -31,7 +31,7 @@ function AxesLabel({
   );
 }
 
-AxesLabel.propTypes = {
+AxisLabel.propTypes = {
   y: PropsTypes.number,
   yLabel: PropsTypes.string,
   xLabel: PropsTypes.string,
@@ -40,4 +40,4 @@ AxesLabel.propTypes = {
   innerWidth: PropsTypes.number,
 };
 
-export default AxesLabel;
+export default AxisLabel;
