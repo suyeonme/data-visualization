@@ -12,7 +12,7 @@ You can check demo [here](https://data-visualization-f7b1yckzn.vercel.app/).
 
 ## Preview
 
-<img width="1440" alt="Screen Shot 2021-01-12 at 8 07 54 PM" src="https://user-images.githubusercontent.com/55128990/104317972-1422b500-5522-11eb-8332-c1143d2b4003.png">
+<img width="1440" alt="Screen Shot 2021-01-18 at 10 59 08 PM" src="https://user-images.githubusercontent.com/55128990/104924502-dec60d80-59e0-11eb-93f6-a61e9e24ccec.png">
 
 <br/>
 
