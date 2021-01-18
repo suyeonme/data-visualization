@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { timeParse, select, pointer } from 'd3';
 import PropsTypes from 'prop-types';
 
-import { Group } from 'style/style';
+import { Group } from 'src/style/style';
 
 function Indicator({
   right,
@@ -30,8 +30,8 @@ function Indicator({
       .merge(g.select('rect'))
       .attr('width', innerWidth)
       .attr('height', innerHeight)
-      .on('mousemove', function () {
-        const x = pointer(event, g.node())[0];
+      .on('mousemove', e => {
+        const x = pointer(e, g.node())[0];
         const hoveredDate = xScale.invert(x);
 
         setSelectedYear(hoveredDate.getFullYear());

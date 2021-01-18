@@ -1,5 +1,4 @@
 import React, { useCallback, useRef, useEffect, useState } from 'react';
-import styled from 'styled-components';
 import {
   scaleLinear,
   extent,
@@ -10,14 +9,16 @@ import {
 } from 'd3';
 import PropsTypes from 'prop-types';
 
-import { Group, MapWrapper, Map } from 'style/style';
+import { Group, MapWrapper, Map } from 'src/style/style';
 import { height, width } from 'utility/utility';
 import AxisLabel from 'components/AxisLabel/AxisLabel';
 import Axes from 'components/Axes/Axes';
 import ColorLegend from 'components/ColorLegend/ColorLegend';
+import Tooltip from 'components/ScatterPlot/Tooltip';
 
 function ScatterPlot({ data }) {
-  const [selected, setSelected] = useState();
+  const [selectedCircle, setSelectedCircle] = useState(null);
+  const [position, setPosition] = useState({ xPosition: 0, yPosition: 0 });
   const circleRef = useRef();
 
   const margin = { top: 50, right: 100, bottom: 70, left: 100 };
@@ -63,7 +64,11 @@ function ScatterPlot({ data }) {
       .attr('cy', innerHeight / 2)
       .attr('cx', innerWidth / 2)
       .attr('r', 0)
-      .on('mouseover', (e, d) => setSelected(d))
+      .on('mouseover', (e, d) => {
+        setSelectedCircle(d);
+        setPosition({ xPosition: e.pageX, yPosition: e.pageY });
+      })
+      .on('mouseout', () => setSelectedCircle(null))
       .transition()
       .duration(2000)
       .delay((_, i) => i * 10)
@@ -112,9 +117,21 @@ function ScatterPlot({ data }) {
             align="vertical"
           />
         </svg>
+        {selectedCircle && (
+          <Tooltip
+            selectedCircle={selectedCircle}
+            position={position}
+            xLabel="YouthRate"
+            yLabel="ElderlyRate"
+          />
+        )}
       </Map>
     </MapWrapper>
   );
 }
+
+ScatterPlot.propTypes = {
+  data: PropsTypes.array,
+};
 
 export default ScatterPlot;

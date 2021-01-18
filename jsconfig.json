@@ -5,6 +5,7 @@
       "components/*": ["src/components/*"],
       "utility/*": ["src/utility/*"],
       "hooks/*": ["src/hooks/*"],
+      "style/*": ["src/style/*"],
     },
   },
 }

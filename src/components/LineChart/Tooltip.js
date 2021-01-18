@@ -2,41 +2,25 @@ import React from 'react';
 import styled from 'styled-components';
 import PropsTypes from 'prop-types';
 
-import { stringFormat } from 'utility/utility';
+import { formatString } from 'utility/utility';
+import { TooltipWrapper } from 'style/style';
 
-const Wrapper = styled.div.attrs(({ left }) => ({
+const Wrapper = styled(TooltipWrapper).attrs(({ xPosition }) => ({
   style: {
-    left,
+    left: xPosition,
   },
 }))`
-  width: 15rem;
-  height: 7rem;
-  position: absolute;
-  top: 50rem;
-  z-index: 4000;
-  font-size: 1.2rem;
-  padding: 1.5rem;
-  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-  background-color: white;
-
-  h3,
-  li:not(:last-child) {
-    margin-bottom: 0.7rem;
-  }
-
-  h3 {
-    font-size: 1.4rem;
-  }
+  top: ${props => props.yPosition}px;
 `;
 
 function Tooltip({ selectedYear, xPosition, crops }) {
   return (
-    <Wrapper left={xPosition + 330}>
+    <Wrapper xPosition={xPosition + 330} yPosition={500}>
       <h3>{selectedYear}</h3>
       <ul>
         {crops.map((crop, i) => (
           <li key={i}>
-            {stringFormat(crop.subject)}: {crop.value}
+            {formatString(crop.subject)}: {crop.value}
           </li>
         ))}
       </ul>

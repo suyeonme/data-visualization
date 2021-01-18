@@ -65,7 +65,10 @@ function Header({ title, subTitle, chartType, dataSource, dataSourceUrl }) {
         <SubTitle>{subTitle}</SubTitle>
         <p>Chart Type: {chartType}</p>
         <p>
-          Data Source: <a href={dataSourceUrl}>{dataSource}</a>
+          Data Source:
+          <a href={dataSourceUrl} target="_blank">
+            {dataSource}
+          </a>
         </p>
       </Wrapper>
     );

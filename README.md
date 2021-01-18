@@ -34,12 +34,19 @@ You can check demo [here](https://data-visualization-3ejqnur28.vercel.app/).
 
 <br/>
 
+### 4. Scatter Plot
+
+![Kapture 2021-01-18 at 22 50 30](https://user-images.githubusercontent.com/55128990/104923751-d7523480-59df-11eb-96f7-64559b7eb1d3.gif)
+
+<br/>
+
 ### ✨ Features
 
 - Interactive graph based on user selected option.
 - Animated graph
 - Sort graph ascending or descending.
 - Zoomable World Map.
+- Tooltip
 
 <br/>
 

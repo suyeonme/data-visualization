@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PropsTypes from 'prop-types';
 
-import { stringFormat } from 'utility/utility';
+import { formatString } from 'utility/utility';
 
 const Wrapper = styled.g`
   transform: ${props =>
@@ -40,7 +40,7 @@ function ColorLegend({
         <ColorTick spacing={i * spacing} align={align} key={i}>
           <ColorCircle r={radius} color={colorScale(d)} />
           <text dy="0.32em" x={textX}>
-            {stringFormat(d)}
+            {formatString(d)}
           </text>
         </ColorTick>
       ))}

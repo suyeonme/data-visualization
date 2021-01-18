@@ -12,8 +12,8 @@ import {
 import PropsTypes from 'prop-types';
 
 import Axes from 'components/Axes/Axes';
-import { Group, MapWrapper, Map, Dropdown } from 'style/style';
-import { width, numberFormat } from 'utility/utility';
+import { Group, MapWrapper, Map, Dropdown } from 'src/style/style';
+import { width, formatNumber } from 'utility/utility';
 
 const XAxisLabel = styled.g`
   rect {
@@ -95,7 +95,7 @@ function BarChart({ data }) {
       .data(data)
       .join('text')
       .attr('y', d => yScale(yValue(d)) + yScale.bandwidth() / 1.5)
-      .text(d => numberFormat(d.population))
+      .text(d => formatNumber(d.population))
       .attr('x', d => xScale(xValue(d)) + 5)
       .attr('fill-opacity', 0)
       .transition()

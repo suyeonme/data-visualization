@@ -11,9 +11,9 @@ import {
 import styled from 'styled-components';
 import PropsTypes from 'prop-types';
 
-import { width, height, numberFormat } from 'utility/utility';
+import { width, height, formatNumber } from 'utility/utility';
 import SizeLegend from 'components/BubbleMap/SizeLegend';
-import { MapWrapper, Map, Dropdown } from 'style/style';
+import { MapWrapper, Map, Dropdown } from 'src/style/style';
 
 const CountryPath = styled.path`
   fill: #d2d2d2;
@@ -80,11 +80,11 @@ function BubbleMap({ countries }) {
     if (country.properties.case === undefined) {
       return 'No Reported Data';
     } else if (value === 'death') {
-      return `${country.properties.country}: ${numberFormat(
+      return `${country.properties.country}: ${formatNumber(
         country.properties.death
       )}`;
     } else {
-      return `${country.properties.country}: ${numberFormat(
+      return `${country.properties.country}: ${formatNumber(
         country.properties.case
       )}`;
     }
@@ -124,7 +124,7 @@ function BubbleMap({ countries }) {
               yCircle={100}
               spacing={70}
               radiusScale={radiusScale}
-              numberFormat={numberFormat}
+              formatNumber={formatNumber}
             />
           </svg>
         </Map>

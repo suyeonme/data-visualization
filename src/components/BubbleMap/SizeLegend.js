@@ -24,7 +24,7 @@ const SizeLegend = ({
   ticks,
   xCircle,
   yCircle,
-  numberFormat,
+  formatNumber,
   radiusScale,
   xLabel,
   spacing,
@@ -39,7 +39,7 @@ const SizeLegend = ({
             r={radiusScale(tick)}
           />
           <text dy="0.32em" x={xLabel} y={yCircle - radiusScale(tick)}>
-            {numberFormat(tick)}
+            {formatNumber(tick)}
           </text>
         </Group>
       ))}
@@ -51,7 +51,7 @@ SizeLegend.propTypes = {
   ticks: PropsTypes.array,
   xCircle: PropsTypes.number,
   yCircle: PropsTypes.number,
-  numberFormat: PropsTypes.func,
+  formatNumber: PropsTypes.func,
   radiusScale: PropsTypes.func,
   xLabel: PropsTypes.number,
   spacing: PropsTypes.number,
